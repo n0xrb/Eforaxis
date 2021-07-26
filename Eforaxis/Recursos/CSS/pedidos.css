@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+:root {
+    --bg-color: #f8f9fc;
+    --color: #fff;
+    --principal: #4514a8;
+    --secondary: #8d53ff;
+    --btn-confirmar: #1cc88a;
+    --btn-confirmar-darken: #14865c;
+    --btn-debito: #36b9cc;
+    --btn-debito-darken: #298897;
+    --btn-editar: #e74a3b;
+    --btn-editar-darken: #b43b30;
+    --btn-credito: #f7bd2b;
+    --btn-credito-darken: #a5832c;
+    --btn-eliminar: #e74a3b;
+    --btn-eliminar-darken: #b43b30;
+}
+
+
+/* ========================= CONTENEDOR ======================= */
+
+.contenedor2 {
+    position: relative;
+    max-width: 800px;
+    min-height: calc(70vh);
+    background-color: var(--color);
+    padding: 4em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3em;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
+
+
+/* ========================= PEDIDOS CARD ======================= */
+
+.pedido {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pedido__estado {
+    position: relative;
+    max-width: 400px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 300px));
+    justify-items: center;
+    font-weight: bold;
+}
+
+.estado {
+    position: relative;
+    z-index: 99;
+    background-color: var(--principal) !important;
+    color: var(--color) !important;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.span1 {
+    position: absolute;
+    z-index: 1 !important;
+    content: '';
+    background: rgb(16, 0, 36);
+    background: linear-gradient(90deg, rgba(16, 0, 36, 1) 0%, rgba(69, 20, 168, 1) 3%, rgba(247, 189, 43, 1) 31%);
+    min-width: 200px;
+    max-width: 300px;
+    height: 10px;
+    top: 50%;
+    left: 20%;
+}
+
+.span2 {
+    position: absolute;
+    z-index: 1 !important;
+    content: '';
+    background: rgb(16, 0, 36);
+    background: linear-gradient(90deg, rgba(16, 0, 36, 1) 0%, rgba(69, 20, 168, 1) 38%, rgba(247, 189, 43, 1) 95%);
+    min-width: 200px;
+    max-width: 300px;
+    height: 10px;
+    top: 50%;
+    left: 20%;
+}
+
+.span3 {
+    position: absolute;
+    z-index: 1 !important;
+    content: '';
+    background: rgb(16, 0, 36);
+    background: linear-gradient(90deg, rgba(16, 0, 36, 1) 0%, rgba(69, 20, 168, 1) 100%, rgba(247, 189, 43, 1) 100%);
+    min-width: 200px;
+    max-width: 300px;
+    height: 10px;
+    top: 50%;
+    left: 20%;
+}
+
+.pedido__estado--almacen,
+.pedido__estado--entregado,
+.pedido__estado--transito {
+    position: relative;
+    z-index: 99 !important;
+    color: #000;
+    background-color: var(--btn-credito);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+    padding: .5em;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.pedido__info {
+    max-width: 700px;
+    margin-top: 3em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 150px));
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    font-size: 1.3em;
+    padding: .5em;
+    gap: 1.3em;
+}
+
+hr {
+    margin: 2em;
+    width: 100%;
+}
+
+
+/* ========================= INFORMACION  ======================= */
+
+.pedido__id,
+.pedido__metodo,
+.pedido__productos,
+.pedido__total {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+@media screen and (min-width: 426px) {
+    .pedido__estado span {
+        min-width: 240px;
+        max-width: 300px;
+    }
+}

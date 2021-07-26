@@ -1,0 +1,30 @@
+/* ===================  MEDIA QUERY ===================  */
+
+@media screen and (min-width: 830px) {
+    .contenedor__checkout {
+        font-size: 1.3em;
+    }
+    #toggle {
+        display: none;
+    }
+    .nav__img {
+        width: 30%;
+    }
+    .nav__menu {
+        display: flex;
+        width: max-content;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 2em;
+    }
+    .nav__logout {
+        width: 100%;
+    }
+    .nav__menu.hidden {
+        display: flex;
+    }
+}
+
+.contenedor__checkout img {
+    max-width: 100px;
+}

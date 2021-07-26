@@ -1,0 +1,560 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+:root {
+    --bg-color: #f8f9fc;
+    --color: #fff;
+    --principal: #4514a8;
+    --secondary: #8d53ff;
+    --btn-confirmar: #1cc88a;
+    --btn-confirmar-darken: #14865c;
+    --btn-debito: #36b9cc;
+    --btn-debito-darken: #298897;
+    --btn-editar: #e74a3b;
+    --btn-editar-darken: #b43b30;
+    --btn-credito: #f7bd2b;
+    --btn-credito-darken: #a5832c;
+    --btn-eliminar: #e74a3b;
+    --btn-eliminar-darken: #b43b30;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-size: 62.5%;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+}
+
+main {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    padding: 2em;
+}
+
+header {
+    position: relative;
+}
+
+
+/* =================== TOGGLE ===================  */
+
+#toggle {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 4.5em;
+}
+
+
+/* ===================  NAV ===================  */
+
+.nav {
+    background-color: var(--principal);
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 76.85px;
+    color: var(--color);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav__img {
+    width: max-content;
+}
+
+.nav__logo {
+    width: 120px;
+}
+
+.nav__menu {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav__bienvenida {
+    display: none;
+}
+
+.nav__menu li a {
+    color: var(--color);
+}
+
+.nav__menu li {
+    padding: .5em 1em;
+    border-radius: .5em;
+    cursor: pointer;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-align: center;
+    width: max-content;
+    transition: background .5s;
+    -webkit-transition: background .5s;
+    -moz-transition: background .5s;
+    -ms-transition: background .5s;
+    -o-transition: background .5s;
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    -ms-border-radius: .5em;
+    -o-border-radius: .5em;
+}
+
+.nav__menu li:hover,
+.nav__menu li:active {
+    background-color: var(--secondary);
+}
+
+.nav__carrito {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.nav__carrito input {
+    background-color: red;
+    color: var(--color);
+    font-weight: bold;
+    width: 30px;
+    border: none;
+}
+
+
+/* ===================  RESET DEL INPUT NUMBER ===================  */
+
+#carrito {
+    min-width: 30px;
+    max-width: 80px !important;
+    height: 2rem;
+    text-align: center;
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[name="carrito"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[name=carrito]::-webkit-inner-spin-button,
+input[name=carrito]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+
+/* ===================  CONTENEDOR ===================  */
+
+.contenedor {
+    position: relative;
+    width: 100%;
+    min-height: calc(70vh);
+    background-color: var(--color);
+    padding: 4em 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3em;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
+
+
+/* ===================  TABLA  ===================  */
+
+.productos {
+    width: 100%;
+    padding: 0 2em;
+    overflow-x: scroll;
+    text-align: center;
+}
+
+.productos__title,
+.productos__total {
+    text-align: left;
+}
+
+
+/* ===================  TABLA HEADER ===================  */
+
+.productos__header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 60px);
+    gap: 1em;
+}
+
+.productos__header * {
+    border: 1px solid rgb(0, 0, 0);
+    padding: .5em 0;
+}
+
+
+/* ===================  TABLA body ===================  */
+
+.productos__body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
+.productos__list {
+    display: grid;
+    grid-template-columns: repeat(6, 60px);
+    justify-items: center;
+    align-items: center;
+    gap: 1em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.404);
+}
+
+.productos__list--foto img {
+    width: 50px;
+}
+
+.productos__list--cantidad,
+.productos__list--cantida input {
+    color: var(--color);
+    font-weight: bold;
+    max-width: 50px;
+    border: none;
+    overflow: hidden;
+}
+
+
+/* ===================  TABLA BOTONES ===================  */
+
+.productos__list--editar {
+    width: 100%;
+}
+
+.btn {
+    border: none;
+    width: 100%;
+    padding: .5em 0;
+    color: var(--color);
+    cursor: pointer;
+}
+
+.btn--editar {
+    margin-bottom: 5px;
+    background-color: var(--btn-editar);
+}
+
+.btn--editar:hover,
+.btn--editar:active {
+    background-color: var(--btn-editar-darken);
+}
+
+.btn--confimar {
+    background-color: var(--btn-confirmar);
+}
+
+.btn--confimar:hover,
+.btn--confimar:active {
+    background-color: var(--btn-confirmar-darken);
+}
+
+.btn--confimar.hidden {
+    display: none;
+}
+
+.btn--eliminar {
+    margin-bottom: 5px;
+    background-color: var(--btn-eliminar);
+}
+
+.btn--eliminar:hover {
+    background-color: var(--btn-eliminar-darken);
+}
+
+.btn--home {
+    background-color: var(--principal);
+    color: var(--color);
+    padding: .5em 0;
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+
+/* ===================  EDICION DE CANTIDAD ===================  */
+
+.productos__list input {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+}
+
+.editar {
+    border: 1px solid var(--btn-eliminar);
+}
+
+
+/* ===================  TOTAL A PAGAR ===================  */
+
+.total {
+    width: 100%;
+    margin-top: 2em;
+    padding: 0 2em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.total__valor {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2em;
+}
+
+.total span {
+    font-weight: normal;
+    font-size: 1.2em;
+}
+
+.total__btn {
+    cursor: pointer;
+    background-color: var(--principal);
+    color: var(--color);
+    border: none;
+    padding: 1em 2em;
+    border-radius: .3em;
+    -webkit-border-radius: .3em;
+    -moz-border-radius: .3em;
+    -ms-border-radius: .3em;
+    -o-border-radius: .3em;
+    transition: background .7s;
+    -webkit-transition: background .7s;
+    -moz-transition: background .7s;
+    -ms-transition: background .7s;
+    -o-transition: background .7s;
+}
+
+.total__btn:hover,
+.total__btn:active {
+    background-color: var(--secondary);
+}
+
+
+/* =================== MEDIA QUERY ===================  */
+
+@media screen and (min-width: 500px) {
+    .productos__header {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .productos__list {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .contenedor {
+        max-width: 1074px;
+    }
+    .nav__img {
+        width: 30%;
+    }
+    .nav__logout {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 890px) {
+    .nav__menu.hidden {
+        display: flex;
+    }
+    .nav__menu {
+        display: flex;
+        width: max-content;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 2em;
+    }
+    #toggle {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 976px) {
+    .nav {
+        min-width: 100vw;
+        height: 100%;
+        padding: 10px;
+    }
+    .nav__menu {
+        font-size: .8em;
+        justify-content: flex-end;
+        padding-right: 50px;
+        gap: 50px;
+    }
+    .nav__menu li {
+        font-size: 1.8em;
+    }
+    .nav__logo {
+        width: 130px !important;
+    }
+}
+
+
+/* ===================  PAGINA DE PAGO ===================  */
+
+.contenedor__checkout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    align-items: center;
+}
+
+.contenedor__checkout button {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.contenedor__checkout input {
+    max-width: 200px;
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.404);
+    padding: .5em;
+    border-radius: 5em;
+    -webkit-border-radius: 5em;
+    -moz-border-radius: 5em;
+    -ms-border-radius: 5em;
+    -o-border-radius: 5em;
+    margin-left: 1em;
+}
+
+.contenedor__pago {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.contenedor__data {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hidden {
+    display: none;
+}
+
+.contenedor__opciones {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn--debito {
+    background-color: var(--btn-debito);
+    max-width: 100px;
+    transition: background .6s;
+    -webkit-transition: background .6s;
+    -moz-transition: background .6s;
+    -ms-transition: background .6s;
+    -o-transition: background .6s;
+}
+
+.btn--debito:hover,
+.btn--debito:active {
+    background-color: var(--btn-debito-darken)
+}
+
+.btn--credito {
+    background-color: var(--btn-credito);
+    color: #000;
+    max-width: 100px;
+    transition: background .6s;
+    -webkit-transition: background .6s;
+    -moz-transition: background .6s;
+    -ms-transition: background .6s;
+    -o-transition: background .6s;
+}
+
+.btn--credito:hover,
+.btn--credito:active {
+    background-color: var(--btn-credito-darken)
+}
+
+
+/* ===================  ALERTA ===================  */
+
+.contenedor--2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.404);
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center
+}
+
+.contenedor--2.mostrar {
+    display: flex;
+}
+
+.alerta {
+    position: relative;
+    max-width: 300px;
+    min-height: 400px;
+    background-color: var(--bg-color);
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 3em;
+    border-radius: 1.5em;
+    -webkit-border-radius: 1.5em;
+    -moz-border-radius: 1.5em;
+    -ms-border-radius: 1.5em;
+    -o-border-radius: 1.5em;
+}
+
+.alerta__img img {
+    max-width: 80px;
+}
+
+.alerta__cerrar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 3em;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
